@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3
 
 
-con = sqlite3.connect("./DM2.sqlite3")
+con = sqlite3.connect("./DM001.sqlite3")
 cols = ['id', 'instrument', 'singer']
 df = pd.read_csv('dataset.csv', sep=";", usecols=cols, nrows=15)
 #df = pd.read_csv('dataset.csv', sep=";")
