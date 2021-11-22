@@ -9,8 +9,6 @@ on:
     # Only use the types keyword to narrow down the activity types that will trigger your workflow.
   push:
     types: [created]
-    branches:
-      - '**'
   #push:
      #branches: [ '**' ]
    # create 
