@@ -27,7 +27,7 @@ jobs:
 
       # make migration and create DB
       - name: Make migration
-        run: python3 manage.py makemigration
+        run: python3 manage.py makemigrations
       - name: Create DB
         run: python3 manage.py migrate
 
