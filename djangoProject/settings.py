@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import configparser
+
+config = configparser.RawConfigParser()
+config.read("configfile.ini")
+datamart_name = config.get('data_mart', 'name')
+datamart_type = config.get('data_mart', 'output_type')
+datamart_file = (datamart_name + '.' + datamart_type)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,7 +86,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'DataMart.sqlite3',
+        'NAME': BASE_DIR / datamart_file,
     }
 }
 
