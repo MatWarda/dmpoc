@@ -6,14 +6,10 @@ name: CI
 on:
   
   # Triggers the workflow on push or pull request events but only for the master branch
-    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
   push:
-    types: [created]
-  #push:
-     #branches: [ '**' ]
-   # create 
-  #pull_request:
-   # branches: [ master ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
