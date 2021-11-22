@@ -21,11 +21,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      # Runs a single command using the runners shell
+      # Install requirements
       - name: Install requirements
-        run: python3 -m pip install -r requirements.txt 
-      # Runs a set of commands using the runners shell
-      - name: Migrate DB
+        run: python3 -m pip install -r requirements.txt
+
+      # make migration and create DB
+      - name: Make migration
+        run: python3 manage.py makemigration
+      - name: Create DB
         run: python3 manage.py migrate
+
+      # Seed DB
       - name: Seed DB
         run: python3 seed.py
