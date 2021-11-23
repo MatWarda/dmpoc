@@ -13,12 +13,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import configparser
 
+
+"""importing variables from config"""
 config = configparser.RawConfigParser()
 config.read("configfile.ini")
 datamart_name = config.get('data_mart', 'name')
 datamart_type = config.get('data_mart', 'output_type')
 datamart_file = (datamart_name + '.' + datamart_type)
-
+operation = config.get('data_mart', 'operation')
+print("Operation: " + operation)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
