@@ -26,11 +26,11 @@ jobs:
         run: python3 -m pip install -r requirements.txt
 
       # make migration and create DB
-      - name: Make migration
+      - name: Make migration [platform injected]
         run: python3 manage.py makemigrations
-      - name: Create DB
+      - name: Create DB [platform injected]
         run: python3 manage.py migrate
 
       # Seed DB
-      - name: Seed DB
+      - name: Seed DB [platform injected]
         run: python3 seed.py
